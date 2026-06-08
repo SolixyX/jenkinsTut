@@ -1,26 +1,17 @@
-
-pipleline{
-
-agent any
-
-    stages{
-        stage("Build App"){
-            step{
-                echo "Building the app"
-            }
-        }
-
-        stage ("Testing App"){
-            step{
-                echo "Testing the app"
-            }
-        }
-        stage("Deploying App"){
-            step{
-                echo "Deploying the app"
-            }
-        }
-
-
-    }
-}
+pipeline {  
+    agent any  // "Run this anywhere you have a worker"  
+    stages {  
+        stage('Build') {  
+            steps {  
+                echo 'Installing dependencies...'  
+                sh 'npm install'  
+            }  
+        }  
+        stage('Test') {  
+            steps {  
+                echo 'Running tests...'  
+                sh 'npm test'  
+            }  
+        }  
+    }  
+}  
