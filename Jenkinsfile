@@ -1,4 +1,3 @@
-#Jenkins Declarative pipleline 
 
 pipleline{
 
